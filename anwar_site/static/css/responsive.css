@@ -1,0 +1,483 @@
+/* =============================
+:: Medium Screen Desktop: 992px 
+============================= */
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    nav.navigation_area ul li a {
+        padding: 15px 13px 26px;
+    }
+    .mainmenu ul#nav li a {
+        padding: 35px 10px;
+    }
+	#slider img {
+        height: 650px !important;
+    }
+    .single-accordion h5 a {
+        padding: 17px 45px 17px 20px;
+    }
+    .single_latest_news_text_area {
+        padding: 30px 20px 20px 40px;
+    }
+    .contact_address_area {
+        padding: 30px 0;
+    }
+    .single_contact_address .contact_icon {
+        margin-right: 10px;
+    }
+    .about_us_thumb {
+        height: 305px;
+    }
+    .single_service_desc {
+        padding: 15px 0 0;
+    }
+    .single_service_desc .title {
+        margin-bottom: 13px;
+        padding: 0 20px;
+    }
+    .about_us_area .special_service .single_special_service>h5 {
+        font-size: 16px;
+    }
+}
+
+/* ======================
+:: Tablet Screen:768px
+====================== */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    nav.navigation_area ul li a {
+        font-size: 12px;
+        padding: 15px 4px 26px;
+    }
+	.slider-content .title1 {
+        font-size: 35px;
+    }
+	.slider-content {
+        max-width: 600px;
+    }
+	#slider img {
+	height: 500px !important;
+	}
+    .nivo-caption {
+        left: 60%;
+    }
+    .mainmenu ul#nav li a {
+        font-size: 13px;
+        padding: 36px 10px;
+    }
+	.call_to_image {
+	bottom: -44px;
+	}
+	.call_to > h3 {
+	  font-size:17px;
+	}
+	.call_to > a {
+	font-size: 14px;
+	padding: 9px 10px;
+	}
+    .single_feature {
+        margin-bottom: 30px;
+    }
+    .gallery_area .single_gallery_item {
+        width: 50%;
+    }
+    .features_area {
+        padding-bottom: 70px;
+    }
+    .single_latest_news_area {
+        margin-bottom: 30px;
+    }
+    .blog_area {
+        padding-bottom: 70px;
+    }
+
+    footer.footer_area .col-sm-6:nth-child(3),
+    footer.footer_area .col-sm-6:nth-child(4) {
+        margin-top: 50px;
+    }
+    .single_latest_news_img_area {
+        float: none;
+        width: 100%;
+        display: block;
+        min-height: auto;
+    }
+    .single_latest_news_text_area {
+        display: block;
+        min-height: auto;
+        padding: 20px;
+        width: 100%;
+    }
+    .contact_address_title {
+        padding-bottom: 30px;
+    }
+    .single_contact_address .contact_icon {
+        float: none;
+        height: 50px;
+        margin: 0;
+        width: 50px;
+    }
+    .single_contact_address {
+        text-align: center;
+    }
+    .contact_address_area {
+        padding: 25px 0;
+    }
+    .single_contact_address .contact_icon i {
+        font-size: 24px;
+        line-height: 50px;
+    }
+    .about_us_thumb {
+        background-color: transparent;
+        height: auto;
+        margin-top: 0;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+    }
+    .about_us_thumb>img {
+        height: auto;
+        position: relative;
+        width: 100%;
+        left: 0;
+        top: 0;
+    }
+    .about_us_thumb.mission img {
+        left: 0;
+    }
+    .accordions {
+        margin-top: 30px;
+    }
+
+    .service_area.area1 .single_service_desc {
+        margin-bottom: 50px;
+    }
+    .latest_post .single_latest_post {
+        padding-bottom: 15px;
+        padding-top: 15px;
+    }
+    .top_quote>p {
+        font-size: 13px;
+		padding: 14px 0;
+    }
+	.top_right_area p {
+		font-size: 14px;
+	}
+    .single_share_link>a {
+        padding: 10px;
+    }
+	.footer-content span {
+        color: #fff;
+    }
+    .footer-content h2 {
+        color: #fff;
+    }
+    #contact {
+      padding: 60px 0;
+    }
+}
+
+/* ====================
+:: Mobile Layout:320px
+==================== */
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    .container {
+        width: 290px;
+    }
+	.section_padding{
+		padding: 50px 0;
+	}
+	.mean-container .mean-nav {
+		background: #646efa none repeat scroll 0 0;
+	}
+	.mean-container .mean-nav ul li a.mean-expand {
+		height: 30px;
+	}
+	.mean-container .mean-nav ul li a.mean-expand:hover {
+		background: #A578FF;
+	}
+	 #slider img {
+        height: 250px !important;
+    }
+    .nivo-caption {
+        left: 52%;
+        width: 80%;
+    }
+    .slider-content .title1 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .slider-content .title2 {
+        font-size: 16px;
+        line-height: 22px;
+    }
+	.call_to > a {
+		margin-bottom: 30px;
+}
+.call_to {
+
+  padding: 10px 0;
+}
+    .singl-blog-status-bar>span:nth-child(4) {
+        float: none;
+    }
+    .social-links {
+        padding-left: 0;
+    }
+    .tags {
+        float: left;
+    }
+    .author-img,
+    .comment-img {
+        float: none;
+        margin-bottom: 30px;
+        margin-right: 0;
+        max-width: 100%;
+    }
+    .single_service.course-list .single_service_thumb {
+        height: 150px;
+        position: relative;
+        width: 100%;
+    }
+    .single_service.course-list .single_service_desc {
+        margin-left: 0;
+    }
+    .single_service_desc .title {
+        padding: 0 15px;
+    }
+    .author-content,
+    .single-comment {
+        float: none;
+        width: 100%;
+    }
+    .author-content,
+    .single-comment {
+        float: left;
+        margin-top: 115px;
+        width: 100%;
+    }
+
+    .event_details .single_event_speaker {
+        margin-bottom: 30px;
+    }
+    .event_sidebar {
+        margin-top: 50px;
+    }
+	/* about section */
+	.call_to_action {
+		margin-top: 0;
+	}
+    .about_us_thumb {
+        background-color: transparent;
+        height: auto;
+        margin-top: 0;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+    }
+    .about_us_thumb>img {
+        height: auto;
+        position: relative;
+        width: 100%;
+        left: 0;
+        top: 0;
+    }
+    .about_us_thumb.mission img {
+        left: 0;
+    }
+    .accordions {
+        margin-top: 30px;
+    }
+    .gallery_area .single_gallery_item {
+        width: 100%;
+    }
+    .learn_more_button>a {
+        margin-left: 5px;
+        padding: 8px;
+    }
+    .single_feature {
+        margin-bottom: 30px;
+    }
+	.single-testimonial-item {
+		margin: 150px 0 0;
+	}
+	.single_feature_last{
+		margin-bottom:0;
+	}
+    .features_area {
+        padding-bottom: 0;
+    }
+    .single_service {
+        margin-bottom: 30px;
+    }
+    .cool_fact_text {
+        margin-bottom: 30px;
+    }
+    .cool_facts_area .col-xs-12 .cool_fact_text:after {
+        border-right: none;
+    }
+    .cool_facts_area {
+        padding-bottom: 30px;
+    }
+
+    footer.footer_area .col-sm-6 {
+        margin-top: 50px;
+    }
+    footer.footer_area .col-sm-6:last-child {
+        margin-top: 0;
+    }
+    .single_latest_news_area {
+        margin-bottom: 30px;
+    }
+    .blog_area {
+        padding-bottom: 70px;
+    }
+
+    .important_links .underline {
+        float: left;
+    }
+    .teacher_details_info .name_designation {
+        margin-top: 30px;
+    }
+    .single_latest_news_img_area {
+        float: none;
+        width: 100%;
+        display: block;
+        min-height: auto;
+    }
+    .single_latest_news_text_area {
+        display: block;
+        min-height: auto;
+        padding: 20px;
+        width: 100%;
+    }
+    .pagination li a {
+        padding: 5px;
+        font-size: 12px;
+    }
+    .important_links .underline {
+        float: none;
+    }
+    .breadcumb_area {
+        height: 110px;
+    }
+    .breadcumb_section {
+        height: 100px;
+    }
+	.page_pagination {
+		left: 0;
+	}
+    .page_title {
+        display: none;
+    }
+
+   .hidden-xs {
+        display: none;
+    }
+    .cool_fact_text:after {
+        border-right: medium none;
+    }
+	.footer-content span {
+    color: #fff;
+    font-size: 14px;
+    }
+    .footer-content h2 {
+    color: #fff;
+	margin-top: 50px;
+    }
+	.footer-content i{
+		text-align:center;
+	}
+    .footer-cont-left {
+        padding-left: 0px;
+    }
+	.f-cont {
+	  padding-left: 0px;
+}
+    #contact{
+		background: #a578ff;
+		background-size: cover;
+		padding: 40px 0;
+		background-position: center;
+		text-align:center;
+	}
+}
+
+
+/* ==========================
+:: Width Mobile Layout:480px
+========================== */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .container {
+        width: 450px;
+    }
+	.slider-content .title1 {
+        font-size: 28px;
+        line-height: 40px;
+    }
+    .slider-content .title2 {
+        font-size: 19px;
+    }
+    .tags {
+        float: left;
+    }
+    .author-content,
+    .single-comment {
+        margin-top: 155px;
+    }
+    .welcome_text h1 {
+        font-size: 36px;
+    }
+    .pagination li a {
+        font-size: 14px;
+        padding: 8px;
+    }
+    .learn_more_button>a {
+        margin-left: 15px;
+        padding: 20px;
+    }
+    .page_title {
+        display: inline-block;
+    }
+    .navbar-nav>li>a:after {
+        width: 20%;
+    }
+}
+	/* Newsletter Area */
+	@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.newsletter_area h2 {
+	font-size: 32px; } }
+
+	@media only screen and (min-width: 0px) and (max-width: 767px) {
+	.newsletter_area h2 {
+	font-size: 30px;
+	margin-bottom: 20px; } }
+
+	@media only screen and (min-width: 0px) and (max-width: 767px) {
+	.newsletter_area input {
+	margin-top: 16px; } }
+
+	@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.newsletter_area .common_btn {
+	width: 145px; } }
+
+	@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.newsletter_area .common_btn {
+	float: right; } }
+
+	@media only screen and (min-width: 0px) and (max-width: 767px) {
+	.newsletter_area .common_btn {
+	display: block;
+	margin: 40px auto 0; } }
+
+	@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.newsletter_text {
+	font-size: 13px; } }
+
+	@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.newsletter_text {
+	margin-bottom: 30px; } }
+
+	@media only screen and (min-width: 0px) and (max-width: 767px) {
+	.newsletter_text {
+	text-align: center; } }

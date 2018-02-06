@@ -1,0 +1,14 @@
+<!-- single accordian area start -->
+<div class="panel single-accordion">
+    <h5>
+        <a role="button" aria-expanded="false" aria-controls="ad_{{ count }}" data-toggle="collapse" data-parent="#accordion" href="#ad_{{ count }}" class="collapsed">
+            {{ value.question }}
+                <span class="accor-open">+</span>
+                <span class="accor-close">-</span>
+            </a>
+    </h5>
+    <div id="ad_{{ count }}" class="accordion-content collapse in" aria-expanded="false">
+        <p>{{ value.answer }}</p>
+    </div>
+</div>
+

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block page_name %}FAQ{% endblock %}
+
+{% block content %}
+
+    <section class="knowledgebase_area section_padding_100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-12">
+                    <div class="accordions" id="accordion" role="tablist" aria-multiselectable="true">
+                        <h3>Часто задаваемые вопросы</h3>
+
+                        {% for block in page.faqs %}
+                            {% include_block block.value with count=forloop.counter %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}

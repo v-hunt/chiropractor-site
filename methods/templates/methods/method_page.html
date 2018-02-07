@@ -45,19 +45,20 @@
             </div>
 				<!-- Service Description -->
                     <div class="service_description">
-                        <h5 class="">Related Services</h5>
+                        <h5 class="">Еще методики</h5>
                     </div>
 
 			<!-- Single Service Area Start -->
             <div class="row">
-				<!-- Single Service Area Start -->
-				<div class="col-12 col-lg-6">
+                {% for method in random_methods %}
+                    <!-- Single Service Area Start -->
+                <div class="col-12 col-lg-6">
 					<div class="single_service related">
 						<div class="single_service_thumb">
-							<img src="img/services/s5.jpg" alt="">
+							{% image method.image fill-540x270 %}
 							<div class="hover_overlay">
 								<div class="links">
-									<a href="service-details.html"><i class="fa fa-link" aria-hidden="true"></i></a>
+									<a href="{{ method.url }}"><i class="fa fa-link" aria-hidden="true"></i></a>
 								</div>
 							</div>
 						</div>
@@ -65,10 +66,9 @@
 						<div class="single_service_desc">
 							<!-- Single Service Title Area End -->
 							<div class="title">
-								<a href="#"><h5>Cosmetic Surgery</h5></a>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor doloremque quaet modi accusamus, deserunt quos iustok beatae facilis expedita.</p>
-									<p>quis molestiae harum distinctio, vero mollitia, corporis repellat.</p>
-									<a href="service-details.html" class="redmore-btn">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+								<a href="{{ method.url }}"><h5>{{ method.title }}</h5></a>
+									{{ method.overview | linebreaksbr}}
+									<a href="{{ method.url }}" class="redmore-btn">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
 							</div>
 							<!-- Single Service Blog Title Area End -->
 						</div>
@@ -76,31 +76,8 @@
 				</div>
 				<!-- Single Service Area End -->
 
-				<!-- Single Service Area Start -->
-				<div class="col-12 col-lg-6">
-					<div class="single_service related">
-						<div class="single_service_thumb">
-							<img src="img/services/s3.jpg" alt="">
-							<div class="hover_overlay">
-								<div class="links">
-									<a href="service-details.html"><i class="fa fa-link" aria-hidden="true"></i></a>
-								</div>
-							</div>
-						</div>
-						<!-- Single Service Image Area End -->
-						<div class="single_service_desc">
-							<!-- Single Service Title Area End -->
-							<div class="title">
-								<a href="#"><h5>Cancer Care</h5></a>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor doloremque quaet modi accusamus, deserunt quos iustok beatae facilis expedita.</p>
-								<p>quis molestiae harum distinctio, vero mollitia, corporis repellat.</p>
-								<a href="service-details.html" class="redmore-btn">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-							</div>
-							<!-- Single Service Blog Title Area End -->
-						</div>
-					</div>
-				</div>
-				<!-- Single Service Area End -->
+                {% endfor %}
+
 			</div>
         </div>
     </section>

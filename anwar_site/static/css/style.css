@@ -1080,6 +1080,7 @@ p.month {
 	font-weight: 700;
 	letter-spacing: 0.75px;
 	text-transform: uppercase;
+	margin-top: 12px;
 }
 
 a.redmore-btn:hover{

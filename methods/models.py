@@ -34,3 +34,12 @@ class MethodPage(Page):
     class Meta:
         verbose_name = 'Методика'
         verbose_name_plural = 'Методика'
+
+    def get_context(self, request, *args, **kwargs):
+        """
+        Add some random MethodPages to the context.
+        """
+        context = super(MethodPage, self).get_context(request, *args, **kwargs)
+        random_methods = MethodPage.objects.order_by('?').live()[:2]
+        context['random_methods'] = random_methods
+        return context

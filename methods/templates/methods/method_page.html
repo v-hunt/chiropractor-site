@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+
+{% block page_name %}{{ page.title }}{% endblock %}
+
+
+{% block content %}
+
+<section class="service_details_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-12">
+                    <!-- Service Details Thumb Area Start -->
+                    <div class="service_details_thumb">
+                        {% image page.image fill-1920x505 %}
+                        <!-- Service Details Thumb Caption Area Start -->
+                    </div>
+                    <!-- Service Details Thumb Area End -->
+
+                    <!-- Service Overview -->
+                    <div class="service_overview">
+                        <h5 class="">Описание</h5>
+                    </div>
+
+                    <!-- Service Overview Content -->
+                    <div class="service_overview_content">
+                        <p class="">{{ page.overview | linebreaksbr }}</p>
+                    </div>
+
+                    <!-- Service Description -->
+                    <div class="service_description">
+                        <h5>Description</h5>
+                    </div>
+
+                    <!-- Service Description Content -->
+                    <div class="service_description_content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus similique ipsum quaerat tempore, eum, iusto cupiditate? Illum quis, maxime necessitatibus? Voluptatibus soluta maxime odio neque assumenda. Eaque dignissimos iste asperiores veritatis neque?</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus similique ipsum quaerat tempore, eum, iusto cupiditate? Illum quis, maxime necessitatibus? Voluptatibus soluta maxime odio neque assumenda. Eaque dignissimos iste asperiores veritatis neque?</p>
+                    </div>
+                    <!-- Single Service Area End -->
+                </div>
+            </div>
+				<!-- Service Description -->
+                    <div class="service_description">
+                        <h5 class="">Related Services</h5>
+                    </div>
+
+			<!-- Single Service Area Start -->
+            <div class="row">
+				<!-- Single Service Area Start -->
+				<div class="col-12 col-lg-6">
+					<div class="single_service related">
+						<div class="single_service_thumb">
+							<img src="img/services/s5.jpg" alt="">
+							<div class="hover_overlay">
+								<div class="links">
+									<a href="service-details.html"><i class="fa fa-link" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+						<!-- Single Service Image Area End -->
+						<div class="single_service_desc">
+							<!-- Single Service Title Area End -->
+							<div class="title">
+								<a href="#"><h5>Cosmetic Surgery</h5></a>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor doloremque quaet modi accusamus, deserunt quos iustok beatae facilis expedita.</p>
+									<p>quis molestiae harum distinctio, vero mollitia, corporis repellat.</p>
+									<a href="service-details.html" class="redmore-btn">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+							</div>
+							<!-- Single Service Blog Title Area End -->
+						</div>
+					</div>
+				</div>
+				<!-- Single Service Area End -->
+
+				<!-- Single Service Area Start -->
+				<div class="col-12 col-lg-6">
+					<div class="single_service related">
+						<div class="single_service_thumb">
+							<img src="img/services/s3.jpg" alt="">
+							<div class="hover_overlay">
+								<div class="links">
+									<a href="service-details.html"><i class="fa fa-link" aria-hidden="true"></i></a>
+								</div>
+							</div>
+						</div>
+						<!-- Single Service Image Area End -->
+						<div class="single_service_desc">
+							<!-- Single Service Title Area End -->
+							<div class="title">
+								<a href="#"><h5>Cancer Care</h5></a>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor doloremque quaet modi accusamus, deserunt quos iustok beatae facilis expedita.</p>
+								<p>quis molestiae harum distinctio, vero mollitia, corporis repellat.</p>
+								<a href="service-details.html" class="redmore-btn">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+							</div>
+							<!-- Single Service Blog Title Area End -->
+						</div>
+					</div>
+				</div>
+				<!-- Single Service Area End -->
+			</div>
+        </div>
+    </section>
+
+{% endblock content %}
+

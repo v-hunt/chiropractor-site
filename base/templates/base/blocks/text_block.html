@@ -1,0 +1,12 @@
+{% load wagtailcore_tags %}
+
+
+<!-- Service Description -->
+<div class="service_description">
+    <h5>{{ value.header }}</h5>
+</div>
+
+<!-- Service Description Content -->
+<div class="service_description_content">
+    {{ value.text | richtext }}
+</div>

@@ -4,6 +4,10 @@ from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailadmin.edit_handlers import (
     FieldPanel, MultiFieldPanel, StreamFieldPanel
     )
+from wagtail.wagtailcore.fields import StreamField
+from wagtail.wagtailadmin.edit_handlers import StreamFieldPanel
+
+from base.blocks import BaseContentBlock
 
 
 class MethodIndexPage(Page):
@@ -23,10 +27,16 @@ class MethodPage(Page):
         on_delete=models.SET_NULL, related_name='+',
         verbose_name="картинка",
     )
+    body = StreamField(
+        BaseContentBlock,
+        verbose_name='Основной текстовый блок',
+        blank=True,
+    )
 
     content_panels = Page.content_panels + [
         ImageChooserPanel('image'),
         FieldPanel('overview', classname="full"),
+        StreamFieldPanel('body'),
     ]
     parent_page_types = ['methods.MethodIndexPage']
     subpage_types = []

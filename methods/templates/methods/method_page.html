@@ -30,16 +30,7 @@
                         <p class="">{{ page.overview | linebreaksbr }}</p>
                     </div>
 
-                    <!-- Service Description -->
-                    <div class="service_description">
-                        <h5>Description</h5>
-                    </div>
-
-                    <!-- Service Description Content -->
-                    <div class="service_description_content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus similique ipsum quaerat tempore, eum, iusto cupiditate? Illum quis, maxime necessitatibus? Voluptatibus soluta maxime odio neque assumenda. Eaque dignissimos iste asperiores veritatis neque?</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus similique ipsum quaerat tempore, eum, iusto cupiditate? Illum quis, maxime necessitatibus? Voluptatibus soluta maxime odio neque assumenda. Eaque dignissimos iste asperiores veritatis neque?</p>
-                    </div>
+                    {% include_block page.body %}
                     <!-- Single Service Area End -->
                 </div>
             </div>

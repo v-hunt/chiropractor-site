@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'wagtail.wagtailsearch',
     'wagtail.wagtailadmin',
     'wagtail.wagtailcore',
+    # use /admin/styleguide/ to see styles:
     'wagtail.contrib.wagtailstyleguide',
 
     'modelcluster',
@@ -53,6 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'base',
     'faq',
     'methods',
 ]

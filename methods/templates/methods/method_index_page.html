@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+
+{% block page_name %}Методики{% endblock %}
+
+{% block content %}
+
+<section class="service_area all_services section_padding_100">
+        <div class="container">
+            <div class="row">
+
+
+                {% for page in method_pages %}
+                    <!-- Single Service Area Start -->
+                    <div class="col-12 col-md-4">
+                        <div class="single_service item" style="height: 476px;">
+                            <div class="single_service_thumb">
+                                {% image page.image fill-540x270 %}
+                                <div class="hover_overlay">
+                                    <div class="links">
+                                        <a href="{{ page.url }}"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single_service_desc">
+                                <div class="title">
+                                    <a href="{{ page.url }}"><h5>{{ page.title }}</h5></a>
+                                    {{ page.overview | linebreaksbr }}
+                                    <a href="{{ page.url }}" class="redmore-btn">Детальнее <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Service Area End -->
+                {% endfor %}
+
+            </div>
+        </div>
+
+    </section>
+
+{% endblock content %}

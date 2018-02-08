@@ -18,6 +18,14 @@ class MethodIndexPage(Page):
         verbose_name = 'Методики (список)'
         verbose_name_plural = 'Методики (список)'
 
+    def get_context(self, request, *args, **kwargs):
+        """
+        Update context with MethodPages children.
+        """
+        context = super(MethodIndexPage, self).get_context(request, *args, **kwargs)
+        context['method_pages'] = MethodPage.objects.live()
+        return context
+
 
 class MethodPage(Page):
     overview = models.TextField("Краткое описание", max_length=250)

@@ -1,8 +1,10 @@
 from django.db import models
-from wagtail.wagtailcore.models import Page
+from wagtail.wagtailcore.models import Page, Orderable
 from wagtail.wagtailcore.fields import StreamField
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
-from wagtail.wagtailadmin.edit_handlers import FieldPanel, StreamFieldPanel
+from wagtail.wagtailadmin.edit_handlers import FieldPanel, StreamFieldPanel, InlinePanel
+from modelcluster.fields import ParentalKey
+
 from base.blocks import BaseContentBlock
 
 
@@ -35,8 +37,20 @@ class AboutSpecialistPage(Page):
         FieldPanel('profession'),
         FieldPanel('main_info'),
         StreamFieldPanel('body'),
+        InlinePanel('diplomas', label="Дипломы и сертификаты"),
     ]
 
     class Meta:
         verbose_name = 'О специалисте'
         verbose_name_plural = 'О специалисте'
+
+
+class DiplomaImage(Orderable):
+    page = ParentalKey(AboutSpecialistPage, related_name='diplomas')
+    image = models.ForeignKey(
+        'wagtailimages.Image', on_delete=models.CASCADE, related_name='+'
+    )
+
+    panels = [
+        ImageChooserPanel('image'),
+    ]

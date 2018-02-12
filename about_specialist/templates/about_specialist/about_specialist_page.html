@@ -2,13 +2,14 @@
 
 {% load wagtailcore_tags %}
 {% load wagtailimages_tags %}
+{% load staticfiles %}
 
 
 {% block page_name %}О специалисте{% endblock %}
 
 {% block content %}
 
-    <section class="team_details_area section_padding_100">
+    <section class="gallery_area column clearfix section_padding_100">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-12">
@@ -44,8 +45,47 @@
 
             <div class="col-12 col-md-12">
                 {% include_block page.body %}
+
+                {% if page.diplomas.exists %}
+                    <div class="service_description">
+                        <h5>Дипломы и сертификаты</h5>
+                    </div>
+                {% endif %}
+
             </div>
         </div>
+
+        <div class="gallery_full_width_images_area">
+            <div class="container margin-top">
+                <div class="row">
+
+                    {% if page.diplomas.exists %}
+                        {% for item in page.diplomas.all %}
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <div class="single_gallery_item four-column">
+                                    {% image item.image fill-700x525 %}
+                                    <!-- Single gallery Item hover caption -->
+                                    <div class="hover_overlay">
+                                        <div class="table">
+                                            <div class="table_cell">
+                                                <!-- Popup links -->
+                                                <div class="links">
+                                                    {# Get original image source: #}
+                                                    {% image item.image original as origin_img %}
+                                                    <a class="magnific-popup" href="{{ origin_img.url }}"><i class="fa fa-plus fa-3x"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+
     </section>
 
 {% endblock content %}

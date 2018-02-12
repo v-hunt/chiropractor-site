@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'base',
     'faq',
     'methods',
+    'about_specialist',
 ]
 
 MIDDLEWARE = [

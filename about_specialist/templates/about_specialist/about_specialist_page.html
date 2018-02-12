@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+
+{% block page_name %}О специалисте{% endblock %}
+
+{% block content %}
+
+    <section class="team_details_area section_padding_100">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-12">
+                    <!-- Team Full Image Start -->
+                    <div class="team_full_image">
+                        {% image page.photo fill-540x510 %}
+                    </div>
+                </div>
+                <div class="col-md-6 col-12">
+                    <!-- Team Details info Area Start -->
+                    <div class="teacher_details_info">
+                        <!-- Team Name Designation Start -->
+                        <div class="name_designation">
+                            <h3 class="">{{ page.title }}</h3>
+                            <h5 class="">{{ page.profession }}</h5>
+                        </div>
+                        <!-- About Team Start -->
+                        <div class="about_member">
+                            {{ page.main_info | linebreaks }}
+                        </div>
+                        <!-- Team Contact Info Start -->
+                        <div class="team_contact_info">
+							<!-- Single Contact Info Start -->
+                            <div class="team_single_contact_info">
+								<a href="#" class="get_appointment_btn">Записаться</a>
+                            </div>
+                        </div>
+                        <!-- Team Contact Info End -->
+                    </div>
+                    <!-- Team Details info Area End -->
+                </div>
+            </div>
+
+            <div class="col-12 col-md-12">
+                {% include_block page.body %}
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}

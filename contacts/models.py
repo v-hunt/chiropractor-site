@@ -2,7 +2,7 @@ from django.db import models
 from django.core.validators import RegexValidator
 from wagtail.wagtailcore.models import Page, Orderable
 from wagtail.wagtailcore.fields import RichTextField
-from wagtail.wagtailadmin.edit_handlers import FieldPanel, InlinePanel
+from wagtail.wagtailadmin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel
 from modelcluster.fields import ParentalKey
 
 
@@ -12,6 +12,16 @@ class ContactPage(Page):
     )
     address = models.CharField("Адрес", max_length=255)
     email = models.EmailField("E-mail")
+    latitude = models.FloatField(
+        "Широта",
+        help_text="Используется в картах Google",
+        default=50.451435
+    )
+    longitude = models.FloatField(
+        "Долгота",
+        help_text="Используется в картах Google",
+        default=30.511989
+    )
 
     parent_page_types = ['home.HomePage']
     subpage_types = []
@@ -21,6 +31,10 @@ class ContactPage(Page):
         FieldPanel('address'),
         FieldPanel('email'),
         InlinePanel('phones', label='Телефоны'),
+        MultiFieldPanel(
+            [FieldPanel('latitude'), FieldPanel('longitude')],
+            heading="Координаты для карты Google"
+        ),
 
     ]
 

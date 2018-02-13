@@ -90,6 +90,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                'base.context_processors.global_settings',
             ],
         },
     },
@@ -149,3 +151,6 @@ WAGTAIL_SITE_NAME = "Anwar Personal Site"
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 BASE_URL = 'http://example.com'
+
+
+GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")

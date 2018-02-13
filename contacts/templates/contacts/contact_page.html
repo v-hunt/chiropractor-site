@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 
 {% load wagtailcore_tags %}
+{% comment %}
+By default Django localizes floats ang this fails Google Maps.
+We use this tag to unlocalize latitude and longitude.
+{% endcomment %}
+{% load l10n %}
 
 
 {% block page_name %}Контакты{% endblock %}
@@ -27,5 +32,34 @@
 
             </div>
         </div>
+        <div class="row">
+            <div class="col-12" id="map">
+
+            </div>
+        </div>
     </div>
 {% endblock content %}
+
+{% block extra_js %}
+    <script>
+      function initMap() {
+        var uluru = {% templatetag openbrace %}
+            lat: {{ page.latitude | unlocalize}},
+            lng: {{ page.longitude | unlocalize}}
+                {% templatetag closebrace %};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key={{ GOOGLE_API_KEY }}&callback=initMap">
+    </script>
+
+{% endblock extra_js %}

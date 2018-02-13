@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'faq',
     'methods',
     'about_specialist',
+    'pricing',
 ]
 
 MIDDLEWARE = [

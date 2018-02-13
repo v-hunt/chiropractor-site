@@ -1,0 +1,56 @@
+from django.db import models
+from django.core.validators import RegexValidator
+from wagtail.wagtailcore.models import Page, Orderable
+from wagtail.wagtailcore.fields import RichTextField
+from wagtail.wagtailadmin.edit_handlers import FieldPanel, InlinePanel
+from modelcluster.fields import ParentalKey
+
+
+class ContactPage(Page):
+    body = RichTextField(
+        "Текстовый блок",
+    )
+    address = models.CharField("Адрес", max_length=255)
+    email = models.EmailField("E-mail")
+
+    parent_page_types = ['home.HomePage']
+    subpage_types = []
+
+    content_panels = Page.content_panels + [
+        FieldPanel('body'),
+        FieldPanel('address'),
+        FieldPanel('email'),
+        InlinePanel('phones', label='Телефоны'),
+
+    ]
+
+    class Meta:
+        verbose_name = 'Контакты'
+        verbose_name_plural = 'Контакты'
+
+
+class PhoneNumber(Orderable):
+    page = ParentalKey(ContactPage, related_name='phones')
+    phone = models.CharField(
+        "Телефон",
+        max_length=15,
+        validators=[
+            RegexValidator(
+                r"^\+\d+$",
+                'Введите телефон в формате +888888888'
+            ),
+        ],
+    )
+
+    class Meta:
+        verbose_name = 'Телефон'
+        verbose_name_plural = 'Телефоны'
+
+    def __str__(self):
+        """
+        +380 088 888888
+        """
+        return self.phone[:4] + " " + self.phone[4:7] + " " + self.phone[7:]
+
+    def to_str(self):
+        return self.__str__()

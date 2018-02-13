@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load wagtailcore_tags %}
+
+
+{% block page_name %}Контакты{% endblock %}
+
+{% block content %}
+    <div class="container margin-top">
+        <div class="row">
+            <div class="col-12 col-md-8">
+                {{ page.body | richtext }}
+            </div>
+            <div class="col-12 col-md-4">
+                <h5>Адрес:</h5>
+                <p>{{ page.address }}</p>
+
+                <h5>E-mail:</h5>
+                <p>{{ page.email }}</p>
+
+                <h5>Телефоны:</h5>
+                <p>
+                    {% for item in page.phones.all %}
+                        {{ item.to_str }}<br>
+                    {% endfor %}
+                </p>
+
+            </div>
+        </div>
+    </div>
+{% endblock content %}

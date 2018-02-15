@@ -2,12 +2,16 @@ from django.views.generic.edit import BaseFormView
 from django.contrib import messages
 
 from .forms import ContactForm
+from .models import ContactPage
 
 
 class ContactFormView(BaseFormView):
     http_method_names = ["post"]
     form_class = ContactForm
-    success_url = '/contacts/'
+
+    def get_success_url(self):
+        contact_page = ContactPage.objects.live().first()
+        return contact_page.url
 
     def handle_form_valid(self, request, form):
         form.send_mail()

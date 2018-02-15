@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% load wagtailcore_tags %}
+{% load widget_tweaks %}
 {% comment %}
 By default Django localizes floats ang this fails Google Maps.
 We use this tag to unlocalize latitude and longitude.
@@ -31,25 +32,23 @@ We use this tag to unlocalize latitude and longitude.
 					<div class="contact-message">
 						<form id="contact-form" action="{% url 'handle-contact-form' %}" method="post">
                             {% csrf_token %}
-							<p class="form-messege"></p>
+                            <div class="row">
+                                <div class="form-group col-12 col-md-6">
+                                    {{ form.name | add_class:"form-control" | attr:"placeholder:Ваше имя" }}
+                                </div>
+                                <div class="form-group col-12 col-md-6">
+                                    {{ form.email | add_class:"form-control" | attr:"type:email" | attr:"placeholder:E-mail" }}
+                                </div>
+                                <div class="form-group col-12 col-md-6">
+                                    {{ form.subject | add_class:"form-control" | attr:"placeholder:Тема сообщения" }}
+                                </div>
+                                <div class="form-group col-12 col-md-6">
+                                    {{ form.phone | add_class:"form-control" | attr:"type:phone" | attr:"placeholder:Телефон" }}
+                                </div>
+                            </div>
+
 							<div class="single-input">
-                                {{ form.name }}
-{#								<input name="name" placeholder="Ваше имя" type="text" >#}
-							</div>
-							<div class="single-input input-pd">
-                                {{ form.email }}
-{#								<input name="email" placeholder="E-mail" type="email">#}
-							</div>
-							<div class="single-input">
-                                {{ form.subject }}
-{#								<input name="subject" placeholder="Тема сообщения" type="text">#}
-							</div>
-							<div class="single-input input-pd">
-                                {{ form.phone }}
-{#								<input name="phone" placeholder="Телефон" type="tel">#}
-							</div>
-							<div class="single-input">
-                                {{ form.message }}
+                                {{ form.message | attr:"placeholder:Текст сообщения..." }}
 {#								<textarea name="message" class="form_control" placeholder="Сообщение"></textarea>#}
 							</div>
 							<div class="send-button">

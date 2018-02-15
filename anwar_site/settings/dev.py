@@ -10,6 +10,9 @@ SECRET_KEY = '0u^35+s3lvrrao4oqq-ci)k+cvv$r4!z+g4^4pk#8-lmc6ll6t'
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+MAIL_TO = [
+    'anwar@example.com',
+    ]
 
 
 try:

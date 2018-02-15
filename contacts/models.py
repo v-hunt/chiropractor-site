@@ -5,6 +5,8 @@ from wagtail.wagtailcore.fields import RichTextField
 from wagtail.wagtailadmin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel
 from modelcluster.fields import ParentalKey
 
+from .forms import ContactForm
+
 
 class ContactPage(Page):
     body = RichTextField(
@@ -41,6 +43,14 @@ class ContactPage(Page):
     class Meta:
         verbose_name = 'Контакты'
         verbose_name_plural = 'Контакты'
+
+    def get_context(self, request, *args, **kwargs):
+        """
+        Add ContactForm to the context.
+        """
+        context = super(ContactPage, self).get_context(request, *args, **kwargs)
+        context['form'] = ContactForm()
+        return context
 
 
 class PhoneNumber(Orderable):

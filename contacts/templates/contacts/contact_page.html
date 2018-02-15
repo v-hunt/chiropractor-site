@@ -14,7 +14,52 @@ We use this tag to unlocalize latitude and longitude.
     <div class="container margin-top">
         <div class="row">
             <div class="col-12 col-md-8">
+
                 {{ page.body | richtext }}
+
+                <div class="row">
+				<div class="col-12 col-md-12">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-success" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <strong>Спасибо!</strong> {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+					<div class="contact-message">
+						<form id="contact-form" action="{% url 'handle-contact-form' %}" method="post">
+                            {% csrf_token %}
+							<p class="form-messege"></p>
+							<div class="single-input">
+                                {{ form.name }}
+{#								<input name="name" placeholder="Ваше имя" type="text" >#}
+							</div>
+							<div class="single-input input-pd">
+                                {{ form.email }}
+{#								<input name="email" placeholder="E-mail" type="email">#}
+							</div>
+							<div class="single-input">
+                                {{ form.subject }}
+{#								<input name="subject" placeholder="Тема сообщения" type="text">#}
+							</div>
+							<div class="single-input input-pd">
+                                {{ form.phone }}
+{#								<input name="phone" placeholder="Телефон" type="tel">#}
+							</div>
+							<div class="single-input">
+                                {{ form.message }}
+{#								<textarea name="message" class="form_control" placeholder="Сообщение"></textarea>#}
+							</div>
+							<div class="send-button">
+								<button type="submit">Отправить</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			    </div>
+
             </div>
             <div class="col-12 col-md-4">
                 <h5>Адрес:</h5>
@@ -33,7 +78,7 @@ We use this tag to unlocalize latitude and longitude.
             </div>
         </div>
         <div class="row">
-            <div class="col-12" id="map">
+            <div class="col-12 margin-top" id="map">
 
             </div>
         </div>

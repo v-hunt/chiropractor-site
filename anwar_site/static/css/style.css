@@ -3158,6 +3158,10 @@ span.accor-open {
     margin-top: 50px;
 }
 
+.margin-bottom {
+    margin-bottom: 50px;
+}
+
 #map {
         width: 100%;
         height: 400px;

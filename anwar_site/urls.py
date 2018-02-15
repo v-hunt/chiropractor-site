@@ -10,6 +10,8 @@ from wagtail.wagtaildocs import urls as wagtaildocs_urls
 
 from search import views as search_views
 
+from contacts.views import ContactFormView
+
 urlpatterns = [
     url(r'^django-admin/', include(admin.site.urls)),
 
@@ -26,6 +28,8 @@ urlpatterns = [
     # Alternatively, if you want Wagtail pages to be served from a subpath
     # of your site, rather than the site root:
     #    url(r'^pages/', include(wagtail_urls)),
+
+    url(r'^handle-contact-form/$', ContactFormView.as_view(), name='handle-contact-form'),
 ]
 
 

@@ -16,7 +16,8 @@ class ContactForm(forms.Form):
     phone = forms.CharField(
         label="Телефон",
         required=False,
-        min_length=10, max_length=15
+        min_length=10, max_length=15,
+        widget=forms.TextInput(attrs={'type': 'tel'})
     )
     message = forms.CharField(
         widget=forms.Textarea,

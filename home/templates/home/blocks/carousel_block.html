@@ -1,0 +1,53 @@
+{% load wagtailimages_tags %}
+
+
+<!--  ===================== Slider area start ===================== -->
+<section class="slider-area overlay-gr slide-gr">
+    <div class="slider-wrapper">
+        <div id="slider" class="nivoSlider">
+
+            {% for block in self %}
+                {% image block.value.image fill-1920x900 as img %}
+                <img src="{{ img.url }}" alt="{{ tmp_photo.alt }}" title="#htmlcaption{{ forloop.counter }}">
+            {% endfor %}
+
+        </div>
+
+
+        {% for block in self %}
+            <!-- CAPTION {{ forloop.counter }} -->
+            <div id="htmlcaption{{ forloop.counter }}" class="nivo-html-caption slider-caption-{{ forloop.counter }}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="slider-content">
+
+                                <!-- Direction 1 -->
+                                <div class="wow bounceInRight" data-wow-duration="1.5" data-wow-delay=".5s ">
+                                     <h1 class="title1">{{ block.value.headline }}</h1>
+                                </div>
+
+                                <!-- Direction 2 -->
+                                <div class="wow bounceInRight" data-wow-duration="2" data-wow-delay=".7s ">
+                                    <p class="title2">{{ block.value.caption }}</p>
+                                </div>
+
+                                {% if block.value.link %}
+                                <!-- Direction 3 -->
+                                <div class="wow bounceInUp" data-wow-duration="1.5" data-wow-delay=".9s ">
+                                    <a href="{{ block.value.link }}" class="ready-btn">Детальнее</a>
+                                </div>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- CAPTION {{ forloop.counter }} END -->
+        {% endfor %}
+
+
+    </div>
+</section>
+<!--  ===================== Slider area End ===================== -->

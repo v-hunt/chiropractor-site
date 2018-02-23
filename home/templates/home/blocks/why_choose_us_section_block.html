@@ -1,0 +1,45 @@
+{% load wagtailcore_tags %}
+
+
+<!-- ===================== Why Choose/Feature Area Start ===================== -->
+<section class="features_area area1">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <!-- Section Heading Start -->
+                <div class="section_heading wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                    <h4>{{ self.headline | safe }}</h4>
+                    <p class="section-subtitle">{{ self.text | linebreaksbr }}</p>
+                </div>
+            </div>
+        </div>
+        <!-- end./ row -->
+
+        {% if self.cards %}
+        <div class="row">
+
+            {% for card in self.cards %}
+                <!-- Single Feature Area Start -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single_feature wow fadeInUp item" data-wow-delay="0.2s" style="height: 245px; visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                        <div class="feature_img">
+                            <i class="icofont icofont-{{ card.icon }}"></i>
+                        </div>
+                        <!-- Single Feature Image Area End -->
+                        <div class="feature_text">
+                            <h5>{{ card.title }}</h5>
+                            <p>{{ card.text }}</p>
+                        </div>
+                        <!-- Single Feature Text Area End -->
+                    </div>
+                </div>
+                <!-- Single Feature Area End -->
+            {% endfor %}
+
+            
+        </div>
+        {% endif %}
+
+    </div>
+</section>
+<!-- ===================== Feature Area End ===================== -->

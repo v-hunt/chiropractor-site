@@ -126,3 +126,31 @@ class DiseaseSectionBlock(StructBlock):
         min_num = 1
         max_num = 1
         template = 'home/blocks/disease_section_block.html'
+
+
+class _WhyChoseUsBlock(StructBlock):
+    icon = _IconChoiceBlock()
+    title = CharBlock(
+        label='Название пункта',
+        max_length=19
+    )
+    text = CharBlock(
+        label='Текст под названием',
+        max_length=80,
+    )
+
+
+class WhyChooseUsSectionBlock(StructBlock):
+    headline = CharBlock(
+        label='Заголовок секции',
+    )
+    text = TextBlock(
+        label='Текст'
+    )
+    cards = ListBlock(
+        _WhyChoseUsBlock, label='Список карточек', max_num=4)
+
+    class Meta:
+        min_num = 1
+        max_num = 1
+        template = 'home/blocks/why_choose_us_section_block.html'

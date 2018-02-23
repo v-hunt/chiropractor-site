@@ -9,6 +9,7 @@ from wagtail.wagtailadmin.edit_handlers import StreamFieldPanel
 from .blocks import (
     CarouselBlock,
     DiseaseSectionBlock,
+    WhyChooseUsSectionBlock,
 )
 
 
@@ -17,6 +18,7 @@ class HomePage(Page):
         CarouselBlock(),
         blank=True,
     )
+
     diseases = StreamField([
         ('болезни', DiseaseSectionBlock()),
     ],
@@ -24,7 +26,15 @@ class HomePage(Page):
         verbose_name='Список заболеваний',
     )
 
+    why_choose_us = StreamField([
+        ('why_choose_us', WhyChooseUsSectionBlock()),
+    ],
+        blank=True,
+        verbose_name='Почему выбрать нас',
+    )
+
     content_panels = Page.content_panels + [
         StreamFieldPanel('carousel'),
         StreamFieldPanel('diseases'),
+        StreamFieldPanel('why_choose_us'),
     ]

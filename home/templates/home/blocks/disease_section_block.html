@@ -4,7 +4,7 @@
             <div class="col-12 col-lg-12">
 
                 <div class="diseases">
-                    <h3>{{ self.headline }}</h3>
+                    <h3>{{ self.headline | safe}}</h3>
                     {{ self.text | linebreaks }}
                 </div>
                 <!-- About us special quote start -->

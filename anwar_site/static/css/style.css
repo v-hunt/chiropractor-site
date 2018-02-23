@@ -574,18 +574,21 @@ header.header_area.home_one{
 /* =======================
 :: 08.0 about us area css
 ======================== */
+.diseases {
+	text-align: center;
+}
 
-.about_us_text>h3 {
+.diseases>h3 {
 	color: #2c3e50;
 	text-transform: uppercase;
 }
 
-.about_us_text>h3 span {
+.diseases>h3 span {
 	color: #646efa;
 	text-transform: uppercase;
 }
 
-.about_us_text>p {
+.diseases>p {
 	color: #6f6f6f;
 	font-size: 16px;
 }

@@ -6,7 +6,10 @@ from wagtail.wagtailcore.models import Page
 from wagtail.wagtailcore.fields import StreamField
 from wagtail.wagtailadmin.edit_handlers import StreamFieldPanel
 
-from .blocks import CarouselBlock
+from .blocks import (
+    CarouselBlock,
+    DiseaseSectionBlock,
+)
 
 
 class HomePage(Page):
@@ -14,7 +17,14 @@ class HomePage(Page):
         CarouselBlock(),
         blank=True,
     )
+    diseases = StreamField([
+        ('болезни', DiseaseSectionBlock()),
+    ],
+        blank=True,
+        verbose_name='Список заболеваний',
+    )
 
     content_panels = Page.content_panels + [
         StreamFieldPanel('carousel'),
+        StreamFieldPanel('diseases'),
     ]

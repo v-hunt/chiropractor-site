@@ -1,0 +1,56 @@
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+
+<section class="features_area area1 margin-top">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <!-- Section Heading Start -->
+                <div class="section_heading wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                    <h4>{{ self.headline | safe }}</h4>
+                    <p class="section-subtitle">{{ self.text | linebreaksbr }}</p>
+                </div>
+            </div>
+        </div>
+        <!-- end./ row -->
+    </div>
+    <div class="container service_area all_services">
+        <div class="row">
+
+            {% for method in self.selected_methods %}
+                <!-- Single Service Area Start -->
+                <div class="col-12 col-md-4">
+                    <div class="single_service item" style="height: 476px;">
+                        <div class="single_service_thumb">
+                            {% image method.page.image fill-540x270 %}
+                            <div class="hover_overlay">
+                                <div class="links">
+                                    <a href="{{ method.page.url }}"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_service_desc">
+                            <div class="title">
+                                <a href="{{ method.page.url }}"><h5>{{ method.page.title }}</h5></a>
+                                {{ method.page.overview | linebreaksbr }}
+                                <a href="{{ method.page.url }}" class="redmore-btn">Детальнее <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Service Area End -->
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <div class="row"> <!-- Start Center Button -->
+        <div class="col-md-12">
+            <div class="section-btn wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                <a href="{{ methods_index_page.url }}" class="view-all-btn">Все методики</a>
+            </div>
+        </div>
+    </div>
+</section>

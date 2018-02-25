@@ -6,6 +6,7 @@ from wagtail.wagtailcore.blocks import (
     ChoiceBlock,
     TextBlock,
     ListBlock,
+    PageChooserBlock,
 )
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 
@@ -154,3 +155,29 @@ class WhyChooseUsSectionBlock(StructBlock):
         min_num = 1
         max_num = 1
         template = 'home/blocks/why_choose_us_section_block.html'
+
+
+class _MethodBlock(StructBlock):
+    page = PageChooserBlock(
+        'methods.MethodPage',
+        label='Методика',
+        help_text="Выберите методику для отображения на главной странице",
+    )
+
+
+class SelectedMethodsSection(StructBlock):
+    headline = CharBlock(
+        label='Заголовок секции',
+    )
+    text = TextBlock(
+        label='Текст'
+    )
+    selected_methods = ListBlock(
+        _MethodBlock,
+        label='Методики',
+        min_num=3,
+        max_num=3,
+    )
+
+    class Meta:
+        template = 'home/blocks/selected_methods_section_block.html'

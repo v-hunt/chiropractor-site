@@ -52,6 +52,10 @@ class ContactPage(Page):
         context['form'] = ContactForm()
         return context
 
+    def main_phone(self):
+        if self.phones.exists():
+            return self.phones.first()
+
 
 class PhoneNumber(Orderable):
     page = ParentalKey(ContactPage, related_name='phones')

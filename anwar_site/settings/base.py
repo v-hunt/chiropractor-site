@@ -93,6 +93,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
 
                 'base.context_processors.global_settings',
+                'contacts.context_processors.contacts',
             ],
         },
     },

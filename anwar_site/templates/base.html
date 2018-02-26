@@ -70,7 +70,7 @@
                     <div class="col-md-6">
 						<!--  Top Right Area Start -->
                         <div class="top_right_area hidden-sm">
-							<p><i class="fa fa-ambulance"></i> Emergency Call (+111) 234-567-890</p>
+							<p><i class="fa fa-ambulance"></i> Телефон: {{ contacts.main_phone }}</p>
                         </div>
                     </div>
                 </div>
@@ -206,19 +206,21 @@
                         <!-- single contact info start -->
                         <div class="footer_single_contact_info">
                             <i class="fa ftr-icon fa-map-marker fa-2x" aria-hidden="true"></i>
-                            <p>PO Box 16122, Collins Street, Victoria 8007, USA</p>
+                            <p>{{ contacts.address }}</p>
                         </div>
                         <!-- single contact info start -->
                         <div class="footer_single_contact_info">
                             <i class="fa fa-phone" aria-hidden="true"></i>
-                            <a href="tel:+12001234567">+1 200 123 4567</a>
-                            <a href="tel:+12001234567">+1 200 123 4567</a>
+
+                            {% for phone in contacts.phones.all %}
+                                <a href="tel:{{ phone }}">{{ phone }}</a>
+                            {% endfor %}
+
                         </div>
                         <!-- single contact info start -->
                         <div class="footer_single_contact_info">
                             <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                            <a href="mailto:info@yoursite.com">info@yoursite.com</a>
-                            <a href="mailto:contact@yoursite.com">contact@yoursite.com</a>
+                            <a href="mailto:{{ contacts.email }}">{{ contacts.email }}</a>
                         </div>
                     </div>
                 </div>

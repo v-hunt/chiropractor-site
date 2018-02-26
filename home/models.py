@@ -12,6 +12,7 @@ from .blocks import (
     DiseaseSectionBlock,
     WhyChooseUsSectionBlock,
     SelectedMethodsSection,
+    ContactUsBlock,
 )
 
 
@@ -42,11 +43,19 @@ class HomePage(Page):
         verbose_name='Выбраные методики'
     )
 
+    contact_us = StreamField([
+        ('contact_us', ContactUsBlock())
+    ],
+        blank=True,
+        verbose_name='Блок "Свяжитесь с нами"'
+    )
+
     content_panels = Page.content_panels + [
         StreamFieldPanel('carousel'),
         StreamFieldPanel('diseases'),
         StreamFieldPanel('why_choose_us'),
         StreamFieldPanel('selected_methods'),
+        StreamFieldPanel('contact_us'),
     ]
 
     def get_context(self, request, *args, **kwargs):

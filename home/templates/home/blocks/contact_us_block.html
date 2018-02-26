@@ -1,0 +1,38 @@
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+
+<!-- ===================== Call to action Area Start ===================== -->
+<div class="call_to_action">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="col">
+                    <div class="call_to">
+                        <div class="call_to_image hidden-sm-down">
+                            {% image self.image fill-189x219 %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="col">
+                    <div class="call_to">
+                        <h3>{{ self.text }}</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="col">
+                    <div class="call_to">
+                        <a class="btn btn-default" href="#" role="button">{{ self.button_text }}</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- ===================== Call to action Area End ===================== -->

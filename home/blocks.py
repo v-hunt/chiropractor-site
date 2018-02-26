@@ -181,3 +181,28 @@ class SelectedMethodsSection(StructBlock):
 
     class Meta:
         template = 'home/blocks/selected_methods_section_block.html'
+
+
+class ContactUsBlock(StructBlock):
+    image = ImageChooserBlock(
+        label='Картинка',
+        help_text='Картинка слева от надписи (желательно твое фото)',
+        blank=True,
+    )
+    text = CharBlock(
+        label='Текст',
+        help_text='Основной текстовый блок по центру',
+        max_length=40,
+        default='Задать вопрос или записаться на сеанс'
+    )
+    button_text = CharBlock(
+        label='Кнопка',
+        help_text='Текст на кнопке',
+        max_length=25,
+        default='Связаться с нами',
+    )
+
+    class Meta:
+        template = 'home/blocks/contact_us_block.html'
+        min_num = 1
+        max_num = 1

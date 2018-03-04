@@ -1,5 +1,7 @@
 {% load static wagtailuserbar %}
 
+{% load navigation %}
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -91,58 +93,8 @@
 
                     <div class="col-md-9 col-12">
                         <!-- Menu Area -->
-                        <div class="main_menu_area">
-                            <div class="mainmenu">
-                                <nav>
-                                    <ul id="nav">
-                                        <li><a href="">Home</a>
-											<ul class="sub-menu">
-												<li><a href="">Home Version 1</a></li>
-												<li><a href="">Home Version 2</a></li>
-												<li><a href="">Home Version 3</a></li>
-											</ul>
-										</li>
-										<li class="hidden-md-down current_page_item"><a href="">About Us</a></li>
-										<li><a href="#">pages<i class="fa fa-caret-down" aria-hidden="true"></i></a>
-                                            <ul class="sub-menu">
-												<li><a href="">About Us</a></li>
-												<li><a href="">Appointment</a></li>
-                                                <li><a href="">FAQ</a></li>
-                                                <li><a href="">404</a></li>
-                                                <li><a href="#">Gallery Pages<i class="fa fa-caret-right" aria-hidden="true"></i></a>
-                                                    <ul class="sub-menu">
-                                                        <li><a href="">Four Column</a></li>
-                                                        <li><a href="">Three Column</a></li>
-                                                        <li><a href="">Two Column</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="">Contact Page</a></li>
-                                            </ul>
-                                        </li>
-										<li><a href="#">Services<i class="fa fa-caret-down" aria-hidden="true"></i></a>
-                                            <ul class="sub-menu">
-                                                <li><a href="">Services</a></li>
-                                                <li><a href="">Service Details</a></li>
-                                            </ul>
-                                        </li>
-										<li><a href="#">Doctors<i class="fa fa-caret-down" aria-hidden="true"></i></a>
-                                            <ul class="sub-menu">
-                                                <li><a href="">Doctors</a></li>
-                                                <li><a href="">Doctors Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">Blog<i class="fa fa-caret-down" aria-hidden="true"></i></a>
-                                            <ul class="sub-menu">
-                                                <li><a href="">Blog</a></li>
-                                                <li><a href="">Blog Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="">contact</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                            <!-- mainmenu end -->
-                        </div>
+                            {% main_menu %}
+                        <!-- mainmenu end -->
                     </div>
                 </div>
             </div>

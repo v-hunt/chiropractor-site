@@ -1,0 +1,22 @@
+<div class="main_menu_area">
+    <div class="mainmenu">
+        <nav>
+            <ul id="nav">
+                <li><a href="/">Главная</a>
+                </li>
+                <li class="hidden-md-down current_page_item"><a href="{{ method_index_page_url }}">Методики</a>
+                    <ul class="sub-menu">
+                        {% for method_page in  method_pages%}
+                            <li><a href="{{ method_page.url }}">{{ method_page.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li><a href="{{ about_specialist_page_url }}">О специалисте<i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
+                <li><a href="{{ faq_page_url }}">FAQ<i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
+                <li><a href="{{ pricing_page_url }}">Стоимость<i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
+                <li><a href="#">Blog<i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
+                <li><a href="{{ contact_page_url }}">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>

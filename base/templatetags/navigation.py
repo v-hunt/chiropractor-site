@@ -1,3 +1,4 @@
+import re
 from django import template
 
 from methods.models import MethodIndexPage, MethodPage
@@ -14,14 +15,31 @@ def _get_url_from_page_model(page_model):
     concrete_page = page_model.objects.live().first()
     return concrete_page.url if concrete_page else None
 
+def _convert_model_name(name):
+    """
+    Convert CamelCase to snake_notation.
+
+    See https://stackoverflow.com/a/1176023
+    """
+    s1 = re.sub(r'(.)([A-Z][a-z]+)', r'\1_\2', name)
+    return re.sub(r'([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
+
 
 @register.inclusion_tag('base/tags/main_menu.html')
 def main_menu():
-    return {
-        'method_index_page_url': _get_url_from_page_model(MethodIndexPage),
-        'method_pages': MethodPage.objects.live(),
-        'about_specialist_page_url': _get_url_from_page_model(AboutSpecialistPage),
-        'faq_page_url': _get_url_from_page_model(FaqPage),
-        'pricing_page_url': _get_url_from_page_model(PricingPage),
-        'contact_page_url': _get_url_from_page_model(ContactPage),
+    models = [
+        MethodIndexPage,
+        AboutSpecialistPage,
+        FaqPage,
+        PricingPage,
+        ContactPage
+    ]
+    urls = {
+        _convert_model_name(model.__name__) + '_url': _get_url_from_page_model(model)
+        for model in models
     }
+
+    urls.update({
+        'method_pages': MethodPage.objects.live(),
+    })
+    return urls

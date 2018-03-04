@@ -15,6 +15,7 @@ def _get_url_from_page_model(page_model):
     concrete_page = page_model.objects.live().first()
     return concrete_page.url if concrete_page else None
 
+
 def _convert_model_name(name):
     """
     Convert CamelCase to snake_notation.

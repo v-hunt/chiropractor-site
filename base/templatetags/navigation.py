@@ -1,5 +1,6 @@
 import re
 from django import template
+from typing import List
 
 from methods.models import MethodIndexPage, MethodPage
 from about_specialist.models import AboutSpecialistPage
@@ -9,6 +10,15 @@ from contacts.models import ContactPage
 
 
 register = template.Library()
+
+
+PAGES = {
+    "Методики": MethodIndexPage,
+    "О специалисте": AboutSpecialistPage,
+    "FAQ": FaqPage,
+    "Стоимость": PricingPage,
+    "Контакты": ContactPage,
+}
 
 
 def _get_url_from_page_model(page_model):
@@ -26,6 +36,13 @@ def _convert_model_name(name):
     return re.sub(r'([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
 
 
+def _get_urls_for_models(models: List) -> dict:
+    return {
+        _convert_model_name(model.__name__) + '_url': _get_url_from_page_model(model)
+        for model in models
+    }
+
+
 @register.inclusion_tag('base/tags/main_menu.html')
 def main_menu():
     models = [
@@ -35,12 +52,23 @@ def main_menu():
         PricingPage,
         ContactPage
     ]
-    urls = {
-        _convert_model_name(model.__name__) + '_url': _get_url_from_page_model(model)
-        for model in models
-    }
+    urls = _get_urls_for_models(models)
 
     urls.update({
         'method_pages': MethodPage.objects.live(),
     })
     return urls
+
+
+@register.inclusion_tag('base/tags/footer_links.html')
+def footer_links():
+    models = {
+        MethodIndexPage,
+        AboutSpecialistPage,
+        FaqPage,
+        PricingPage,
+        ContactPage
+    }
+    urls = [{'title': title, 'url': _get_url_from_page_model(page)} for title, page in PAGES.items()]
+    print(urls)
+    return {'urls': urls}

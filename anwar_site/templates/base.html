@@ -44,6 +44,7 @@
 
     {# Global stylesheets #}
     <link rel="stylesheet" type="text/css" href="{% static 'css/anwar_site.css' %}">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
     {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
@@ -191,26 +192,20 @@
                 </div>
                 <!-- Useful Links Area End -->
 				
-				<!-- Photostream Area Start -->
+				<!-- Social Area Start -->
                 <div class="col-12 col-md-6 col-lg-3">
-                    <div class="footer_contact_info footer-single-part item wow fadeInUp">
+                    <div class="important_links footer_contact_info footer-single-part item wow fadeInUp">
                         <div class="title">
-                            <h4>Instagram Photos</h4>
+                            <h4>Социальные сервисы</h4>
                         </div>
-                        <!-- Photostream start -->
-						<div class="instagram-widget">
-							<div class="thumbs-outer clearfix">
-								<figure class="image-thumb"><img src="{% static 'img/footer/thumbnail-1.jpg' %}" alt=""><a class="lightbox-image" href="#" title="Image title here"><i class="icon fa fa-plus"></i></a></figure>
-								<figure class="image-thumb"><img src="{% static 'img/footer/thumbnail-2.jpg' %}" alt=""><a class="lightbox-image" href="#" title="Image title here"><i class="icon fa fa-plus"></i></a></figure>
-								<figure class="image-thumb"><img src="{% static 'img/footer/thumbnail-3.jpg' %}" alt=""><a class="lightbox-image" href="#" title="Image title here"><i class="icon fa fa-plus"></i></a></figure>
-								<figure class="image-thumb"><img src="{% static 'img/footer/thumbnail-4.jpg' %}" alt=""><a class="lightbox-image" href="#" title="Image title here"><i class="icon fa fa-plus"></i></a></figure>
-								<figure class="image-thumb"><img src="{% static 'img/footer/thumbnail-5.jpg' %}" alt=""><a class="lightbox-image" href="#" title="Image title here"><i class="icon fa fa-plus"></i></a></figure>
-								<figure class="image-thumb"><img src="{% static 'img/footer/thumbnail-6.jpg' %}" alt=""><a class="lightbox-image" href="#" title="Image title here"><i class="icon fa fa-plus"></i></a></figure>
-							</div>
+                        <!-- Social links start -->
+						<div class="links">
+                            <a href=""><i class="fab fa-facebook-square fa-4x"></i></a>
+                            <a href="" style="margin-left: 15px;"><i class="fab fa-instagram fa-4x"></i></a>
 						</div>			
                     </div>
                 </div>
-                <!-- Photostream Area End -->
+                <!-- Social Area End -->
             </div>
         </div>
 

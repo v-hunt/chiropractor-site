@@ -24,6 +24,16 @@ class ContactPage(Page):
         help_text="Используется в картах Google",
         default=30.511989
     )
+    facebook_link = models.URLField(
+        "Facebook",
+        help_text='Ссылка на страницу в Facebook',
+        blank=True
+    )
+    instagram_link = models.URLField(
+        "Instagram",
+        help_text='Ссылка на страницу в Instagram',
+        blank=True
+    )
 
     parent_page_types = ['home.HomePage']
     subpage_types = []
@@ -37,6 +47,10 @@ class ContactPage(Page):
             [FieldPanel('latitude'), FieldPanel('longitude')],
             heading="Координаты для карты Google"
         ),
+        MultiFieldPanel(
+            [FieldPanel('facebook_link'), FieldPanel('instagram_link')],
+            heading="Социальные сервисы"
+        )
 
     ]
 

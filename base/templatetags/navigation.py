@@ -64,3 +64,20 @@ def main_menu():
 def footer_links():
     urls = [{'title': title, 'url': _get_url_from_page_model(page)} for title, page in PAGES]
     return {'urls': urls}
+
+
+@register.inclusion_tag('base/tags/footer_social_serv_links.html')
+def footer_social_serv_links():
+    contact_page = ContactPage.objects.live().first()
+
+    if contact_page:
+        return {
+            'facebook_link': contact_page.facebook_link,
+            'instagram_link': contact_page.instagram_link,
+        }
+
+    else:
+        return {
+            'facebook_link': None,
+            'instagram_link': None,
+        }

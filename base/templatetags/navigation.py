@@ -12,13 +12,13 @@ from contacts.models import ContactPage
 register = template.Library()
 
 
-PAGES = {
-    "Методики": MethodIndexPage,
-    "О специалисте": AboutSpecialistPage,
-    "FAQ": FaqPage,
-    "Стоимость": PricingPage,
-    "Контакты": ContactPage,
-}
+PAGES = (
+    ("Методики", MethodIndexPage),
+    ("О специалисте", AboutSpecialistPage),
+    ("FAQ", FaqPage),
+    ("Стоимость", PricingPage),
+    ("Контакты", ContactPage),
+)
 
 
 def _get_url_from_page_model(page_model):
@@ -62,13 +62,5 @@ def main_menu():
 
 @register.inclusion_tag('base/tags/footer_links.html')
 def footer_links():
-    models = {
-        MethodIndexPage,
-        AboutSpecialistPage,
-        FaqPage,
-        PricingPage,
-        ContactPage
-    }
-    urls = [{'title': title, 'url': _get_url_from_page_model(page)} for title, page in PAGES.items()]
-    print(urls)
+    urls = [{'title': title, 'url': _get_url_from_page_model(page)} for title, page in PAGES]
     return {'urls': urls}

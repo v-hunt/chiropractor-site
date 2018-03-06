@@ -44,7 +44,7 @@
 
     {# Global stylesheets #}
     <link rel="stylesheet" type="text/css" href="{% static 'css/anwar_site.css' %}">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 
     {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
@@ -172,7 +172,7 @@
                         </div>
                         <!-- single contact info start -->
                         <div class="footer_single_contact_info">
-                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                            <i class="far fa-envelope" aria-hidden="true"></i>
                             <a href="mailto:{{ contacts.email }}">{{ contacts.email }}</a>
                         </div>
                     </div>

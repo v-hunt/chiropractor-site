@@ -7,6 +7,15 @@
 {% block page_name %}{{ page.title }}{% endblock %}
 
 
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+    <li><a href="{{ page.get_parent.url }}">Методики</a></li>
+    <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+    <li>{{ page.title }}</li>
+{% endblock breadcrumbs %}
+
+
 {% block content %}
 
 <section class="service_details_area">

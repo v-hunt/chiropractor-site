@@ -6,6 +6,14 @@
 
 {% block page_name %}Методики{% endblock %}
 
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+    <li>Методики</li>
+{% endblock breadcrumbs %}
+
+
 {% block content %}
 
 <section class="service_area all_services section_padding_100">

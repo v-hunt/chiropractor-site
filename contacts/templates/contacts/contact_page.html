@@ -11,6 +11,14 @@ We use this tag to unlocalize latitude and longitude.
 
 {% block page_name %}Контакты{% endblock %}
 
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+    <li>Контакты</li>
+{% endblock breadcrumbs %}
+
+
 {% block content %}
     <div class="container margin-top">
         <div class="row">

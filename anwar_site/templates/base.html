@@ -117,9 +117,9 @@
                         <!-- Breadcumb page pagination start -->
                         <div class="page_pagination">
                             <ul>
-                                <li><a href="">Home</a></li>
-                                <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
-                                <li>About us</li>
+                                {% block breadcrumbs %}
+                                    <li><a href="/">Главная</a></li>
+                                {% endblock breadcrumbs %}
                             </ul>
                         </div>
                     </div>

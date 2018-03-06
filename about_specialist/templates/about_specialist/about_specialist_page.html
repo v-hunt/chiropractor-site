@@ -6,6 +6,14 @@
 
 {% block page_name %}О специалисте{% endblock %}
 
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+    <li>О специалисте</li>
+{% endblock breadcrumbs %}
+
+
 {% block content %}
 
     <section class="gallery_area column clearfix section_padding_100">

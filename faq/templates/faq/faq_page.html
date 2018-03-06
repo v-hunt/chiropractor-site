@@ -1,7 +1,16 @@
 {% extends "base.html" %}
 {% load wagtailcore_tags %}
 
+
 {% block page_name %}FAQ{% endblock %}
+
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+    <li>FAQ</li>
+{% endblock breadcrumbs %}
+
 
 {% block content %}
 

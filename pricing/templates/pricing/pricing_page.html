@@ -4,6 +4,14 @@
 
 {% block page_name %}Стоимость{% endblock %}
 
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+    <li>Стоимость</li>
+{% endblock breadcrumbs %}
+
+
 {% block content %}
 
     <div class="container margin-top">

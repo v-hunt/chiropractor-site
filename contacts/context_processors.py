@@ -6,3 +6,6 @@ def contacts(request):
         return {
             'contacts': ContactPage.objects.live().first()
         }
+
+    else:
+        return {}

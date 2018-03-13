@@ -159,3 +159,5 @@ BASE_URL = 'http://example.com'
 
 
 GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
+
+SERVE_STATIC_LOCALLY = False

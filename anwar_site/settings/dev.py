@@ -15,6 +15,8 @@ MAIL_TO = [
     ]
 
 
+SERVE_STATIC_LOCALLY = True
+
 try:
     from .local import *
 except ImportError:
